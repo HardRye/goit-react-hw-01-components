@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './Stats.module.css';
+import styles from './Statistics.module.css';
 
-const Stats = ({ title, stats }) => {
+const Statistics = ({ title = '', stats }) => {
   function randomColor() {
     return `rgb(
     ${Math.floor(Math.random() * 256)},
@@ -13,10 +13,7 @@ const Stats = ({ title, stats }) => {
   }
 
   return (
-    <section
-      className={styles.statsSection}
-      style={{ width: stats.length * 65 }}
-    >
+    <section className={styles.statistics}>
       {title && <h2 className={styles.title}>{title}</h2>}
 
       <ul className={styles.statList}>
@@ -35,7 +32,11 @@ const Stats = ({ title, stats }) => {
   );
 };
 
-Stats.propTypes = {
+Statistics.defaultProps = {
+  title: '',
+};
+
+Statistics.propTypes = {
   title: PropTypes.string,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
@@ -46,8 +47,4 @@ Stats.propTypes = {
   ).isRequired,
 };
 
-Stats.defaultProps = {
-  title: '',
-};
-
-export default Stats;
+export default Statistics;
