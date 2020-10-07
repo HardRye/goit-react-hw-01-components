@@ -28,6 +28,7 @@ const App = () => {
     { id: 'id-4', label: '.psd', percentage: 47 },
     { id: 'id-5', label: '.pdf', percentage: 10 },
   ];
+  //
 
   return (
     <div>
